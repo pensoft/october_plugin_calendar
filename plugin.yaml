@@ -1,34 +1,34 @@
 plugin:
-    name: 'christophheich.calendar::lang.plugin.name'
-    description: 'christophheich.calendar::lang.plugin.description'
-    author: 'Christoph Heich'
+    name: 'pensoft.calendar::lang.plugin.name'
+    description: 'pensoft.calendar::lang.plugin.description'
+    author: 'Pensoft'
     icon: oc-icon-calendar-o
     homepage: ''
 permissions:
     pensoft.calendar.manage_entries:
-        tab: 'christophheich.calendar::lang.plugin.name'
-        label: 'christophheich.calendar::lang.calendar.manage_entries'
+        tab: 'pensoft.calendar::lang.plugin.name'
+        label: 'pensoft.calendar::lang.calendar.manage_entries'
     pensoft.calendar.manage_events:
-        tab: 'christophheich.calendar::lang.plugin.name'
-        label: 'christophheich.calendar::lang.calendar.manage_events'
+        tab: 'pensoft.calendar::lang.plugin.name'
+        label: 'pensoft.calendar::lang.calendar.manage_events'
     pensoft.calendar.manage_categories:
-        tab: 'christophheich.calendar::lang.plugin.name'
-        label: 'christophheich.calendar::lang.calendar.manage_categories'
+        tab: 'pensoft.calendar::lang.plugin.name'
+        label: 'pensoft.calendar::lang.calendar.manage_categories'
 navigation:
     main-menu-item:
-        label: 'christophheich.calendar::lang.calendar.events'
+        label: 'pensoft.calendar::lang.calendar.events'
         url: pensoft/calendar/entries
         icon: icon-calendar
         sideMenu:
             side-menu-item:
-                label: 'christophheich.calendar::lang.calendar.categories'
+                label: 'pensoft.calendar::lang.calendar.categories'
                 url: pensoft/calendar/categories
                 icon: icon-sitemap
             side-menu-item2:
-                label: 'christophheich.calendar::lang.calendar.entries'
+                label: 'pensoft.calendar::lang.calendar.entries'
                 url: pensoft/calendar/entries
                 icon: icon-bars
             side-menu-item3:
-                label: 'christophheich.calendar::lang.calendar.events'
+                label: 'pensoft.calendar::lang.calendar.events'
                 url: pensoft/calendar/events
                 icon: icon-calendar-o

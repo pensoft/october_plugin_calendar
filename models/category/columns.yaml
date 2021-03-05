@@ -1,13 +1,13 @@
 columns:
     title:
-        label: 'christophheich.calendar::lang.category.title'
+        label: 'pensoft.calendar::lang.category.title'
         type: text
         sortable: true
     description:
-        label: 'christophheich.calendar::lang.category.description'
+        label: 'pensoft.calendar::lang.category.description'
         type: text
         sortable: true
     identifier:
-        label: 'christophheich.calendar::lang.category.identifier'
+        label: 'pensoft.calendar::lang.category.identifier'
         type: number
         sortable: true

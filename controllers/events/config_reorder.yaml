@@ -1,4 +1,4 @@
 title: Events
-modelClass: ChristophHeich\Calendar\Models\Event
+modelClass: Pensoft\Calendar\Models\Event
 toolbar:
     buttons: reorder_toolbar

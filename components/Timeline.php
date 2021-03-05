@@ -9,7 +9,7 @@ namespace Pensoft\Calendar\Components;
  * Time: 17:36
  */
 
-use ChristophHeich\Calendar\Models\Entry;
+use Pensoft\Calendar\Models\Entry;
 use Cms\Classes\ComponentBase;
 
 class Timeline extends ComponentBase

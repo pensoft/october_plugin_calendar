@@ -1,14 +1,14 @@
 <?php namespace Pensoft\Calendar\Components;
 
 use Cms\Classes\ComponentBase;
-use ChristophHeich\Calendar\Models\Entry;
+use Pensoft\Calendar\Models\Entry;
 use Illuminate\Support\Facades\Session;
 
 class PastEvents extends ComponentBase
 {
     public function init()
     {
-        $this->page['default_year'] = \Lang::get('christophheich.calendar::lang.entry.year');
+        $this->page['default_year'] = \Lang::get('pensoft.calendar::lang.entry.year');
         $this->page['result'] = $this->getCurrentPastEntries();
     }
     public function componentDetails()

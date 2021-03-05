@@ -17,6 +17,8 @@ class BuilderTableCreateChristophheichCalendarEvents extends Migration
 				$table->timestamp('created_at')->nullable();
 				$table->timestamp('updated_at')->nullable();
 				$table->timestamp('deleted_at')->nullable();
+				$table->string('description')->nullable();
+				$table->string('identifier', 255)->nullable()->unsigned(false)->default(null);
 			});
 		}
     }

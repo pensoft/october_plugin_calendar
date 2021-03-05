@@ -1,4 +1,4 @@
 title: Entries
-modelClass: ChristophHeich\Calendar\Models\Entry
+modelClass: Pensoft\Calendar\Models\Entry
 toolbar:
     buttons: reorder_toolbar

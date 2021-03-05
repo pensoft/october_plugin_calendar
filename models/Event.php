@@ -8,7 +8,6 @@ use Model;
 class Event extends Model
 {
     use \October\Rain\Database\Traits\Validation;
-    
     use \October\Rain\Database\Traits\SoftDelete;
 
     protected $dates = ['deleted_at'];
@@ -21,8 +20,7 @@ class Event extends Model
     /**
      * @var array Validation rules
      */
-    public $rules = [
-    ];
+    public $rules = [];
 
     /**
      * @var string The database table used by the model.

@@ -15,6 +15,9 @@ class BuilderTableCreateChristophheichCalendarCategories extends Migration
 				$table->string('title')->nullable();
 				$table->string('description')->nullable();
 				$table->integer('identifier')->nullable();
+				$table->timestamp('created_at')->nullable();
+				$table->timestamp('updated_at')->nullable();
+				$table->timestamp('deleted_at')->nullable();
 			});
 		}
     }

@@ -1,10 +1,10 @@
 name: Events
-form: $/christophheich/calendar/models/event/fields.yaml
-modelClass: ChristophHeich\Calendar\Models\Event
-defaultRedirect: christophheich/calendar/events
+form: $/pensoft/calendar/models/event/fields.yaml
+modelClass: Pensoft\Calendar\Models\Event
+defaultRedirect: pensoft/calendar/events
 create:
-    redirect: 'christophheich/calendar/events/update/:id'
-    redirectClose: christophheich/calendar/events
+    redirect: 'pensoft/calendar/events/update/:id'
+    redirectClose: pensoft/calendar/events
 update:
-    redirect: christophheich/calendar/events
-    redirectClose: christophheich/calendar/events
+    redirect: pensoft/calendar/events
+    redirectClose: pensoft/calendar/events

@@ -1,10 +1,10 @@
 fields:
     title:
-        label: 'christophheich.calendar::lang.entry.title'
+        label: 'pensoft.calendar::lang.entry.title'
         span: left
         required: 1
         type: text
-        comment: 'christophheich.calendar::lang.entry.titleComment'
+        comment: 'pensoft.calendar::lang.entry.titleComment'
     slug:
         label: Slug
         span: right
@@ -14,12 +14,12 @@ fields:
         required: 1
         type: text
     all_day:
-        label: 'christophheich.calendar::lang.entry.allDay'
+        label: 'pensoft.calendar::lang.entry.allDay'
         span: full
         type: switch
-        comment: 'christophheich.calendar::lang.entry.allDayComment'
+        comment: 'pensoft.calendar::lang.entry.allDayComment'
     start:
-        label: 'christophheich.calendar::lang.entry.start'
+        label: 'pensoft.calendar::lang.entry.start'
         mode: datetime
         span: left
         dependsOn: {  }
@@ -28,18 +28,18 @@ fields:
             field: all_day
             condition: checked
         type: datepicker
-        comment: 'christophheich.calendar::lang.entry.startComment'
+        comment: 'pensoft.calendar::lang.entry.startComment'
     place: 
-        label: 'christophheich.calendar::lang.entry.place'
+        label: 'pensoft.calendar::lang.entry.place'
         span: right
         type: text
     url:
-        label: 'christophheich.calendar::lang.entry.url'
+        label: 'pensoft.calendar::lang.entry.url'
         span: right
         type: text
-        comment: 'christophheich.calendar::lang.entry.urlComment'
+        comment: 'pensoft.calendar::lang.entry.urlComment'
     end:
-        label: 'christophheich.calendar::lang.entry.end'
+        label: 'pensoft.calendar::lang.entry.end'
         mode: datetime
         span: left
         dependsOn: {  }
@@ -48,25 +48,25 @@ fields:
             field: all_day
             condition: checked
         type: datepicker
-        comment: 'christophheich.calendar::lang.entry.endComment'
+        comment: 'pensoft.calendar::lang.entry.endComment'
     time_format:
-        label: 'christophheich.calendar::lang.entry.timeFormat'
+        label: 'pensoft.calendar::lang.entry.timeFormat'
         span: right
         placeholder: 'H(:mm)'
         type: text
-        comment: 'christophheich.calendar::lang.entry.timeFormatComment'
+        comment: 'pensoft.calendar::lang.entry.timeFormatComment'
         hidden: true
     description:
-        label: 'christophheich.calendar::lang.entry.description'
+        label: 'pensoft.calendar::lang.entry.description'
         span: left
         type: richeditor
-        comment: 'christophheich.calendar::lang.entry.descriptionComment'
+        comment: 'pensoft.calendar::lang.entry.descriptionComment'
         size: autogrow
     identifier:
-        label: 'christophheich.calendar::lang.entry.identifier'
+        label: 'pensoft.calendar::lang.entry.identifier'
         span: right
         type: number
-        comment: 'christophheich.calendar::lang.entry.identifierComment'
+        comment: 'pensoft.calendar::lang.entry.identifierComment'
         hidden: false
     cover_image:
         label: 'pensoft.content::lang.plugin.cover'
@@ -79,29 +79,29 @@ fields:
         span: right
         type: fileupload
     sectionPeriod:
-        label: 'christophheich.calendar::lang.entry.sectionPeriod'
+        label: 'pensoft.calendar::lang.entry.sectionPeriod'
         span: full
         type: section
         hidden: true
     display_event_time:
-        label: 'christophheich.calendar::lang.entry.displayEventTime'
+        label: 'pensoft.calendar::lang.entry.displayEventTime'
         span: auto
         trigger:
             action: hide
             field: all_day
             condition: checked
         type: checkbox
-        comment: 'christophheich.calendar::lang.entry.displayEventTimeComment'
+        comment: 'pensoft.calendar::lang.entry.displayEventTimeComment'
         hidden: true
     display_event_end:
-        label: 'christophheich.calendar::lang.entry.displayEventEnd'
+        label: 'pensoft.calendar::lang.entry.displayEventEnd'
         span: auto
         trigger:
             action: hide
             field: all_day
             condition: checked
         type: checkbox
-        comment: 'christophheich.calendar::lang.entry.displayEventEndComment'
+        comment: 'pensoft.calendar::lang.entry.displayEventEndComment'
         hidden: true
     sectionOptional:
         label: Optional
@@ -109,92 +109,92 @@ fields:
         type: section
         hidden: true
     rendering:
-        label: 'christophheich.calendar::lang.entry.rendering'
+        label: 'pensoft.calendar::lang.entry.rendering'
         options:
             background: background
             inverseBackground: inverse-background
         emptyOption: '-- default --'
         span: auto
         type: dropdown
-        comment: 'christophheich.calendar::lang.entry.renderingComment'
+        comment: 'pensoft.calendar::lang.entry.renderingComment'
         hidden: true
     index:
-        label: 'christophheich.calendar::lang.entry.id'
+        label: 'pensoft.calendar::lang.entry.id'
         span: auto
         placeholder: '0'
         type: number
-        comment: 'christophheich.calendar::lang.entry.idComment'
+        comment: 'pensoft.calendar::lang.entry.idComment'
         hidden: false
     constraint:
-        label: 'christophheich.calendar::lang.entry.constraint'
+        label: 'pensoft.calendar::lang.entry.constraint'
         span: auto
         disabled: 1
         hidden: 1
         type: text
     dow:
-        label: 'christophheich.calendar::lang.entry.dow'
+        label: 'pensoft.calendar::lang.entry.dow'
         span: auto
         placeholder: '[ 1, 2, 3, 4 ]'
         type: text
-        comment: 'christophheich.calendar::lang.entry.dowComment'
+        comment: 'pensoft.calendar::lang.entry.dowComment'
         hidden: true
     class_name:
-        label: 'christophheich.calendar::lang.entry.className'
+        label: 'pensoft.calendar::lang.entry.className'
         span: auto
         type: text
-        comment: 'christophheich.calendar::lang.entry.classNameComment'
+        comment: 'pensoft.calendar::lang.entry.classNameComment'
         hidden: true
     source:
-        label: 'christophheich.calendar::lang.entry.source'
+        label: 'pensoft.calendar::lang.entry.source'
         span: full
         type: text
-        comment: 'christophheich.calendar::lang.entry.sourceComment'
+        comment: 'pensoft.calendar::lang.entry.sourceComment'
         hidden: true
     overlap:
-        label: 'christophheich.calendar::lang.entry.overlap'
+        label: 'pensoft.calendar::lang.entry.overlap'
         span: auto
         type: checkbox
-        comment: 'christophheich.calendar::lang.entry.overlapComment'
+        comment: 'pensoft.calendar::lang.entry.overlapComment'
         hidden: true
     editable:
-        label: 'christophheich.calendar::lang.entry.editable'
+        label: 'pensoft.calendar::lang.entry.editable'
         span: left
         type: checkbox
-        comment: 'christophheich.calendar::lang.entry.editableComment'
+        comment: 'pensoft.calendar::lang.entry.editableComment'
         hidden: true
     resource_editable:
-        label: 'christophheich.calendar::lang.entry.resourceEditable'
+        label: 'pensoft.calendar::lang.entry.resourceEditable'
         span: auto
         type: checkbox
-        comment: 'christophheich.calendar::lang.entry.resourceEditableComment'
+        comment: 'pensoft.calendar::lang.entry.resourceEditableComment'
         hidden: true
     start_editable:
-        label: 'christophheich.calendar::lang.entry.startEditable'
+        label: 'pensoft.calendar::lang.entry.startEditable'
         span: auto
         trigger:
             action: hide
             field: editable
             condition: checked
         type: checkbox
-        comment: 'christophheich.calendar::lang.entry.startEditableComment'
+        comment: 'pensoft.calendar::lang.entry.startEditableComment'
         hidden: true
     duration_editable:
-        label: 'christophheich.calendar::lang.entry.durationEditable'
+        label: 'pensoft.calendar::lang.entry.durationEditable'
         span: auto
         trigger:
             action: hide
             field: editable
             condition: checked
         type: checkbox
-        comment: 'christophheich.calendar::lang.entry.durationEditableComment'
+        comment: 'pensoft.calendar::lang.entry.durationEditableComment'
         hidden: true
     sectionColorStyling:
-        label: 'christophheich.calendar::lang.entry.sectionColorStyling'
+        label: 'pensoft.calendar::lang.entry.sectionColorStyling'
         span: full
         type: section
         hidden: true
     styling_reset_switch:
-        label: 'christophheich.calendar::lang.entry.stylingResetSwitch'
+        label: 'pensoft.calendar::lang.entry.stylingResetSwitch'
         span: full
         disabled: 1
         hidden: 1
@@ -203,10 +203,10 @@ fields:
             field: styling_reset_switch
             condition: checked
         type: switch
-        comment: 'christophheich.calendar::lang.entry.stylingResetSwitchComment'
+        comment: 'pensoft.calendar::lang.entry.stylingResetSwitchComment'
         hidden: true
     color:
-        label: 'christophheich.calendar::lang.entry.color'
+        label: 'pensoft.calendar::lang.entry.color'
         span: auto
         trigger:
             action: empty
@@ -214,35 +214,35 @@ fields:
             condition: checked
         type: colorpicker
         availableColors: myColorList
-        commentAbove: 'christophheich.calendar::lang.entry.colorComment'
+        commentAbove: 'pensoft.calendar::lang.entry.colorComment'
         hidden: false
     text_color:
-        label: 'christophheich.calendar::lang.entry.textcolor'
+        label: 'pensoft.calendar::lang.entry.textcolor'
         span: auto
         trigger:
             action: empty
             field: styling_reset_switch
             condition: checked
         type: colorpicker
-        commentAbove: 'christophheich.calendar::lang.entry.textColorComment'
+        commentAbove: 'pensoft.calendar::lang.entry.textColorComment'
         hidden: true
     background_color:
-        label: 'christophheich.calendar::lang.entry.backgroundColor'
+        label: 'pensoft.calendar::lang.entry.backgroundColor'
         span: auto
         trigger:
             action: empty
             field: styling_reset_switch
             condition: checked
         type: colorpicker
-        commentAbove: 'christophheich.calendar::lang.entry.backgroundColorComment'
+        commentAbove: 'pensoft.calendar::lang.entry.backgroundColorComment'
         hidden: true
     border_color:
-        label: 'christophheich.calendar::lang.entry.borderColor'
+        label: 'pensoft.calendar::lang.entry.borderColor'
         span: auto
         trigger:
             action: empty
             field: styling_reset_switch
             condition: checked
         type: colorpicker
-        commentAbove: 'christophheich.calendar::lang.entry.borderColorComment'
+        commentAbove: 'pensoft.calendar::lang.entry.borderColorComment'
         hidden: true

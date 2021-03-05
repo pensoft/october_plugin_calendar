@@ -18,7 +18,7 @@ class BuilderTableCreateChristophheichCalendarEntries extends Migration
 				$table->string('color')->nullable();
 				$table->string('text_color')->nullable();
 				$table->string('rendering')->nullable();
-				$table->string('description')->nullable();
+				$table->text('description')->nullable();
 				$table->string('url')->nullable();
 				$table->boolean('all_day')->nullable();
 				$table->boolean('display_event_end')->nullable();
@@ -27,6 +27,21 @@ class BuilderTableCreateChristophheichCalendarEntries extends Migration
 				$table->string('time_format')->nullable();
 				$table->string('constraint')->nullable();
 				$table->boolean('overlap')->nullable();
+				$table->timestamp('deleted_at')->nullable();
+				$table->timestamp('created_at')->nullable();
+				$table->timestamp('updated_at')->nullable();
+				$table->string('class_name')->nullable();
+				$table->boolean('editable')->nullable();
+				$table->boolean('start_editable')->nullable();
+				$table->boolean('duration_editable')->nullable();
+				$table->boolean('resource_editable')->nullable();
+				$table->string('source')->nullable();
+				$table->string('background_color')->nullable();
+				$table->string('border_color')->nullable();
+				$table->string('dow')->nullable();
+				$table->string('identifier', 255)->nullable()->unsigned(false)->default(null);
+				$table->string('place')->nullable();
+				$table->string('slug');
 			});
 		}
     }

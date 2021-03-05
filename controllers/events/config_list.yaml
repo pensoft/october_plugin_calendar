@@ -1,5 +1,5 @@
-list: $/christophheich/calendar/models/event/columns.yaml
-modelClass: ChristophHeich\Calendar\Models\Event
+list: $/pensoft/calendar/models/event/columns.yaml
+modelClass: Pensoft\Calendar\Models\Event
 title: Events
 noRecordsMessage: 'backend::lang.list.no_records'
 showSetup: true
@@ -9,4 +9,4 @@ toolbar:
     buttons: list_toolbar
     search:
         prompt: 'backend::lang.list.search_prompt'
-recordUrl: 'christophheich/calendar/events/update/:id'
+recordUrl: 'pensoft/calendar/events/update/:id'
