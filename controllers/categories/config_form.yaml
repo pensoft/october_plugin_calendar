@@ -1,0 +1,10 @@
+name: Categories
+form: $/pensoft/calendar/models/category/fields.yaml
+modelClass: Pensoft\Calendar\Models\Category
+defaultRedirect: pensoft/calendar/categories
+create:
+    redirect: 'pensoft/calendar/categories/update/:id'
+    redirectClose: pensoft/calendar/categories
+update:
+    redirect: pensoft/calendar/categories
+    redirectClose: pensoft/calendar/categories

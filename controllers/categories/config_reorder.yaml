@@ -1,0 +1,4 @@
+title: Categories
+modelClass: Pensoft\Calendar\Models\Category
+toolbar:
+    buttons: reorder_toolbar
