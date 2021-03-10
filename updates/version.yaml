@@ -9,3 +9,5 @@
 1.0.4:
     - 'Created table christophheich_calendar_categories'
     - builder_table_create_christophheich_calendar_categories.php
+1.0.5:
+    - 'Show only upcoming events property'
