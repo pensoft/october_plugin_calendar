@@ -29,7 +29,7 @@ fields:
             condition: checked
         type: datepicker
         comment: 'pensoft.calendar::lang.entry.startComment'
-    place: 
+    place:
         label: 'pensoft.calendar::lang.entry.place'
         span: right
         type: text
@@ -65,9 +65,11 @@ fields:
     identifier:
         label: 'pensoft.calendar::lang.entry.identifier'
         span: right
+        default: '1'
+        hidden: 0
+        required: 1
         type: number
-        comment: 'pensoft.calendar::lang.entry.identifierComment'
-        hidden: false
+        comment: '1- organized; 2- involved'
     cover_image:
         label: 'pensoft.content::lang.plugin.cover'
         mode: image
@@ -96,13 +98,14 @@ fields:
     display_event_end:
         label: 'pensoft.calendar::lang.entry.displayEventEnd'
         span: auto
+        default: 0
+        hidden: 1
         trigger:
             action: hide
             field: all_day
             condition: checked
         type: checkbox
         comment: 'pensoft.calendar::lang.entry.displayEventEndComment'
-        hidden: true
     sectionOptional:
         label: Optional
         span: full
@@ -141,9 +144,9 @@ fields:
     class_name:
         label: 'pensoft.calendar::lang.entry.className'
         span: auto
+        hidden: 1
         type: text
         comment: 'pensoft.calendar::lang.entry.classNameComment'
-        hidden: true
     source:
         label: 'pensoft.calendar::lang.entry.source'
         span: full
@@ -204,28 +207,16 @@ fields:
             condition: checked
         type: switch
         comment: 'pensoft.calendar::lang.entry.stylingResetSwitchComment'
-        hidden: true
-    color:
-        label: 'pensoft.calendar::lang.entry.color'
-        span: auto
-        trigger:
-            action: empty
-            field: styling_reset_switch
-            condition: checked
-        type: colorpicker
-        availableColors: myColorList
-        commentAbove: 'pensoft.calendar::lang.entry.colorComment'
-        hidden: false
     text_color:
         label: 'pensoft.calendar::lang.entry.textcolor'
         span: auto
+        hidden: true
         trigger:
             action: empty
             field: styling_reset_switch
             condition: checked
         type: colorpicker
         commentAbove: 'pensoft.calendar::lang.entry.textColorComment'
-        hidden: true
     background_color:
         label: 'pensoft.calendar::lang.entry.backgroundColor'
         span: auto

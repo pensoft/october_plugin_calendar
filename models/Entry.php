@@ -19,6 +19,9 @@ class Entry extends Model
     protected $filters = [
         'year'
     ];
+    protected $jsonable = [
+        'materials'
+    ];
 	/* translate */
 	public $implement = ['RainLab.Translate.Behaviors.TranslatableModel'];
 
@@ -133,11 +136,11 @@ class Entry extends Model
             }
         }
         else {
-            //if (is_null($category) || $category == 'null' || !is_array($category)) {
-                //$entries = Entry::latest()->limit($count)->get()->toArray();
-            //} else {
+            if (is_null($category) || $category == 'null') {
+                $entries = Entry::latest()->limit($count)->get()->toArray();
+            } else {
                 $entries = Entry::latest()->limit($count)->where('identifier', $category)->get()->toArray();
-            //}
+            }
         }
 
         return array_map(function($data) {
