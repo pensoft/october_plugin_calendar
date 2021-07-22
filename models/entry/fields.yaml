@@ -29,7 +29,7 @@ fields:
             condition: checked
         type: datepicker
         comment: 'pensoft.calendar::lang.entry.startComment'
-    place: 
+    place:
         label: 'pensoft.calendar::lang.entry.place'
         span: right
         type: text
@@ -96,13 +96,13 @@ fields:
     display_event_end:
         label: 'pensoft.calendar::lang.entry.displayEventEnd'
         span: auto
+        hidden: true
         trigger:
             action: hide
             field: all_day
             condition: checked
         type: checkbox
         comment: 'pensoft.calendar::lang.entry.displayEventEndComment'
-        hidden: true
     sectionOptional:
         label: Optional
         span: full
@@ -204,7 +204,6 @@ fields:
             condition: checked
         type: switch
         comment: 'pensoft.calendar::lang.entry.stylingResetSwitchComment'
-        hidden: true
     color:
         label: 'pensoft.calendar::lang.entry.color'
         span: auto
