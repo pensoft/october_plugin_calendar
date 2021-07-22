@@ -98,8 +98,7 @@ fields:
     display_event_end:
         label: 'pensoft.calendar::lang.entry.displayEventEnd'
         span: auto
-        default: 0
-        hidden: 1
+        hidden: true
         trigger:
             action: hide
             field: all_day
@@ -207,6 +206,17 @@ fields:
             condition: checked
         type: switch
         comment: 'pensoft.calendar::lang.entry.stylingResetSwitchComment'
+    color:
+        label: 'pensoft.calendar::lang.entry.color'
+        span: auto
+        trigger:
+            action: empty
+            field: styling_reset_switch
+            condition: checked
+        type: colorpicker
+        availableColors: myColorList
+        commentAbove: 'pensoft.calendar::lang.entry.colorComment'
+        hidden: false
     text_color:
         label: 'pensoft.calendar::lang.entry.textcolor'
         span: auto
