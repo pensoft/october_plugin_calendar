@@ -9,6 +9,7 @@ namespace Pensoft\Calendar\Components;
  * Time: 17:36
  */
 
+use Carbon\Carbon;
 use Pensoft\Calendar\Models\Entry;
 use Cms\Classes\ComponentBase;
 
@@ -33,12 +34,33 @@ class Timeline extends ComponentBase
                 'validationPattern' => '^[1-9]+$',
                 'validationMessage' => 'You can only use numeric symbols eg. 5 or 1.'
             ],
+			'upcoming' => [
+				'title' => 'Show only upcoming',
+				'type' => 'checkbox',
+				'default' => false
+			],
+			'link' => [
+				'title' => 'Hashtag link',
+				'type'  => 'string',
+				'default' => '#september'
+			],
+			'use_day' => [
+				'title' => 'Use entry day for the link',
+				'type' => 'checkbox',
+				'default' => false
+			],
         ];
     }
 
     public function getLatestEntries()
     {
-        $entries = Entry::orderBy('start', 'desc');
-        return $entries->take($this->property('limit'))->get()->reverse();
+    	if($this->property('upcoming')){
+			$entries = Entry::where('start', '>', Carbon::now())->orderBy('start', 'asc');
+			return $entries->take($this->property('limit'))->get();
+		}else{
+			$entries = Entry::orderBy('start', 'desc');
+			return $entries->take($this->property('limit'))->get()->reverse();
+		}
+
     }
 }

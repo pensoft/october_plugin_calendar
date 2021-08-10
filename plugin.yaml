@@ -1,7 +1,7 @@
 plugin:
     name: 'pensoft.calendar::lang.plugin.name'
     description: 'pensoft.calendar::lang.plugin.description'
-    author: 'Pensoft'
+    author: Pensoft
     icon: oc-icon-calendar-o
     homepage: ''
 permissions:
@@ -20,15 +20,11 @@ navigation:
         url: pensoft/calendar/entries
         icon: icon-calendar
         sideMenu:
-            side-menu-item:
-                label: 'pensoft.calendar::lang.calendar.categories'
-                url: pensoft/calendar/categories
-                icon: icon-sitemap
             side-menu-item2:
                 label: 'pensoft.calendar::lang.calendar.entries'
                 url: pensoft/calendar/entries
                 icon: icon-bars
-            side-menu-item3:
-                label: 'pensoft.calendar::lang.calendar.events'
-                url: pensoft/calendar/events
-                icon: icon-calendar-o
+            side-menu-item:
+                label: Types
+                url: /pensoft/calendarcardsextension/eventtypes
+                icon: icon-tag
