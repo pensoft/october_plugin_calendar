@@ -39,6 +39,16 @@ class Timeline extends ComponentBase
 				'type' => 'checkbox',
 				'default' => false
 			],
+			'link' => [
+				'title' => 'Hashtag link',
+				'type'  => 'string',
+				'default' => '#september'
+			],
+			'use_day' => [
+				'title' => 'Use entry day for the link',
+				'type' => 'checkbox',
+				'default' => false
+			],
         ];
     }
 

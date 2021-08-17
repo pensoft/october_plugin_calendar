@@ -24,3 +24,7 @@ navigation:
                 label: 'pensoft.calendar::lang.calendar.entries'
                 url: pensoft/calendar/entries
                 icon: icon-bars
+            side-menu-item:
+                label: Types
+                url: /pensoft/calendarcardsextension/eventtypes
+                icon: icon-tag

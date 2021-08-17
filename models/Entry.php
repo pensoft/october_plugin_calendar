@@ -33,6 +33,10 @@ class Entry extends Model
         'cover_image' => 'System\Models\File',
     ];
 
+    public $belongsToMany = [
+        'speakers' => 'System\Models\File',
+    ];
+
     /**
      * @var array Validation rules
      */
