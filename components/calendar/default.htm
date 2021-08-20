@@ -31,7 +31,8 @@
 
                         if (info.event.url.length) {
                             return window.open(info.event.url);
-                        }else if(info.event.extendedProps.slug) {
+                        }else
+                        	if(info.event.extendedProps.slug) {
                             // return window.open('/{{ __SELF__.property("language") }}/events/' + info.event.extendedProps.slug);
                             let url = '/{{ __SELF__.property("language") }}/events/' + info.event.extendedProps.slug;
                             location.href = url;
@@ -39,7 +40,7 @@
                         }
                     },
                     eventRender: function(info) {
-                        info.el.setAttribute('title', info.event.extendedProps.description.replace(/<[^>]*>?/gm, ''));
+                        info.el.setAttribute('title', info.event.extendedProps.description.replace(/<[^>]*>?/gm, '').replace(/&amp;/g, '&').replace(/&nbsp;/g, ' '));
                     },
 					displayEventEnd: true,
                 });
