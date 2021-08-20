@@ -169,6 +169,7 @@ class Entry extends Model
             $format['allDay']           = $data['all_day'];
             $format['displayEventEnd']  = $data['display_event_end'];
             $format['displayEventTime'] = $data['display_event_time'];
+			$format['eventTitle']            = $data['title'];
             $format['index']               = $data['index'];
             $format['timeFormat']       = $data['time_format'];
             //$format['constraint']     = $data['constraint'];

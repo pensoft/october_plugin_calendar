@@ -40,7 +40,7 @@
                         }
                     },
                     eventRender: function(info) {
-                        info.el.setAttribute('title', info.event.extendedProps.description.replace(/<[^>]*>?/gm, '').replace(/&amp;/g, '&').replace(/&nbsp;/g, ' '));
+                        info.el.setAttribute('title', info.event.extendedProps.eventTitle.replace(/&amp;/g, '&') + ' - ' + info.event.extendedProps.description.replace(/<[^>]*>?/gm, '').replace(/&amp;/g, '&').replace(/&nbsp;/g, ' '));
                     },
 					displayEventEnd: true,
                 });

@@ -17,3 +17,5 @@
     - 'new parameters'
 1.0.8:
     - 'calendar tolltip text replace some asccii codes'
+1.0.9:
+    - 'calendar attr title/tooltip add event title'
