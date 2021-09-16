@@ -39,26 +39,41 @@ class Timeline extends ComponentBase
 				'type' => 'checkbox',
 				'default' => false
 			],
-			'link' => [
-				'title' => 'Hashtag link',
-				'type'  => 'string',
-				'default' => '#september'
-			],
-			'use_day' => [
-				'title' => 'Use entry day for the link',
+			'marked_for_display' => [
+				'title' => 'Show only marked for displaying in the timeline',
 				'type' => 'checkbox',
 				'default' => false
 			],
+//			'link' => [
+//				'title' => 'Hashtag link',
+//				'type'  => 'string',
+//				'default' => '#september'
+//			],
+//			'use_day' => [
+//				'title' => 'Use entry day for the link',
+//				'type' => 'checkbox',
+//				'default' => false
+//			],
         ];
     }
 
     public function getLatestEntries()
     {
     	if($this->property('upcoming')){
-			$entries = Entry::where('start', '>', Carbon::now())->orderBy('start', 'asc');
+			if($this->property('marked_for_display')){
+				$entries = Entry::where('start', '>', Carbon::now())->where('show_on_timeline', true)->orderBy('start', 'asc');
+			}else{
+				$entries = Entry::where('start', '>', Carbon::now())->orderBy('start', 'asc');
+			}
+
 			return $entries->take($this->property('limit'))->get();
 		}else{
-			$entries = Entry::orderBy('start', 'desc');
+			if($this->property('marked_for_display')){
+				$entries = Entry::orderBy('start', 'desc')->where('show_on_timeline', true);
+			}else{
+				$entries = Entry::orderBy('start', 'desc');
+			}
+
 			return $entries->take($this->property('limit'))->get()->reverse();
 		}
 

@@ -19,3 +19,6 @@
     - 'calendar tolltip text replace some asccii codes'
 1.0.9:
     - 'calendar attr title/tooltip add event title'
+1.0.10:
+    - 'Timeline property and new db table field'
+    - update_entries2.php

@@ -247,3 +247,8 @@ fields:
         type: colorpicker
         commentAbove: 'pensoft.calendar::lang.entry.borderColorComment'
         hidden: true
+    show_on_timeline:
+      label: 'Show on timeline'
+      type: switch
+      span: right
+      default: true
