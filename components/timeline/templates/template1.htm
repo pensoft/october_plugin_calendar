@@ -1,0 +1,15 @@
+<div class="timeline vertical">
+	{% for entry in __SELF__.getLatestEntries() %}
+	{% if __SELF__.property('use_day') and __SELF__.property('link') %}
+	<div class="timeline-item">
+		<a href="{{'events'|page}}{{__SELF__.property('link')}}{{entry.start|date("d")}}" class="timeline-header text-primary"><span>{{entry.event_date}}</span> <span class="show_event_time">{{entry.event_time}}</span></a>
+		<a href="{{'events'|page}}{{__SELF__.property('link')}}{{entry.start|date("d")}}" class="timeline-body no-color">{{entry.title}}</a>
+	</div>
+	{% else %}
+	<div class="timeline-item">
+		<a href="/events/{{entry.slug}}" class="timeline-header text-primary"><span>{{entry.event_date}}</span></a>
+		<a href="/events/{{entry.slug}}" class="timeline-body no-color">{{entry.title}}</a>
+	</div>
+	{% endif %}
+	{% endfor %}
+</div>

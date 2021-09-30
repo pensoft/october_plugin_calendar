@@ -22,3 +22,5 @@
 1.0.10:
     - 'Timeline property and new db table field'
     - update_entries2.php
+1.0.11:
+    - 'New Timeline template'

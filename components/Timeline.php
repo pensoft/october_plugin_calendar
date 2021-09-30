@@ -23,6 +23,12 @@ class Timeline extends ComponentBase
         ];
     }
 
+	public function onRun()
+	{
+//		$this->addJs('assets/js/slick.min.js');
+//		$this->addJs('assets/js/def.js');
+	}
+
     public function defineProperties()
     {
         return [
@@ -44,6 +50,11 @@ class Timeline extends ComponentBase
 				'type' => 'checkbox',
 				'default' => false
 			],
+			'templates' => [
+				'title' => 'Select templates',
+				'type' => 'dropdown',
+				'default' => 'template1'
+			],
 //			'link' => [
 //				'title' => 'Hashtag link',
 //				'type'  => 'string',
@@ -56,6 +67,14 @@ class Timeline extends ComponentBase
 //			],
         ];
     }
+
+	public function getTemplatesOptions()
+	{
+		return [
+			'template1' => 'Template 1',
+			'template2' => 'Template 2',
+		];
+	}
 
     public function getLatestEntries()
     {
