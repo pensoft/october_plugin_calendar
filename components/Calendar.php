@@ -68,6 +68,12 @@ class Calendar extends ComponentBase
                 'description'   => 'Set the language of FullCalendar. This will add the necessary JavaScript localization files!',
                 'type'          => 'dropdown',
                 'default'       => 'en'
+            ],
+            'redirect_to_detailed_page' => [
+                'title'         => 'Redirect to detailed page first',
+                'description'   => '',
+				'type'          => 'checkbox',
+				'default'       => 'false'
             ]
         ];
     }

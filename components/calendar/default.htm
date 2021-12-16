@@ -3,6 +3,7 @@
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 var calendarEl = document.getElementById('{{ __SELF__.alias }}');
+                var alwaysRedirectToDetailedPage = parseInt('{{ __SELF__.property("redirect_to_detailed_page")}}');
 
                 var calendar = new FullCalendar.Calendar(calendarEl, {
                     plugins: [ 'dayGrid', 'list', 'bootstrap' ],
@@ -28,8 +29,7 @@
 					},
                     eventClick: function(info) {
                         info.jsEvent.preventDefault();
-
-                        if (info.event.url.length) {
+                        if (info.event.url.length && !alwaysRedirectToDetailedPage) {
                             return window.open(info.event.url);
                         }else
                         	if(info.event.extendedProps.slug) {
