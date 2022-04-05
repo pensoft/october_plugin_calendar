@@ -14,13 +14,14 @@ use Pensoft\Calendar\Models\Entry;
 
 Route::prefix('api/pensoft/calendar/')->group(function () {
 
-    /**
-     * Route for the feed.
-     *
-     * @return json_array
-     */
-    Route::get('feed/{count?}/{category?}', function ($count = null, $category = null) {
-        return Entry::formatted($count, $category);
-    });
+	/**
+	 * Route for the feed.
+	 *
+	 * @return json_array
+	 */
+
+	Route::get('feed/{count?}/{category?}', function ($count = null, $category = null, Request $request) {
+		return Entry::formatted($count, $category);
+	})->middleware('web');
 
 });

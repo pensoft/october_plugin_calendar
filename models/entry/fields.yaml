@@ -252,3 +252,9 @@ fields:
       type: switch
       span: right
       default: true
+    is_internal:
+      label: 'Is Internal'
+      type: switch
+      span: right
+      default: false
+      commentAbove: 'If checked, only logged in users will be able to see the event'

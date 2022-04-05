@@ -78,25 +78,25 @@ class Timeline extends ComponentBase
 		];
 	}
 
-    public function getLatestEntries()
-    {
-    	if($this->property('upcoming')){
+	public function getLatestEntries()
+	{
+		if($this->property('upcoming')){
 			if($this->property('marked_for_display')){
-				$entries = Entry::where('start', '>', Carbon::now())->where('show_on_timeline', true)->orderBy('start', 'asc');
+				$entries = Entry::where('start', '>', Carbon::now())->where('show_on_timeline', true)->where('is_internal', false)->orderBy('start', 'asc');
 			}else{
-				$entries = Entry::where('start', '>', Carbon::now())->orderBy('start', 'asc');
+				$entries = Entry::where('start', '>', Carbon::now())->where('is_internal', false)->orderBy('start', 'asc');
 			}
 
 			return $entries->take($this->property('limit'))->get();
 		}else{
 			if($this->property('marked_for_display')){
-				$entries = Entry::orderBy('start', 'desc')->where('show_on_timeline', true);
+				$entries = Entry::orderBy('start', 'desc')->where('is_internal', false)->where('show_on_timeline', true);
 			}else{
-				$entries = Entry::orderBy('start', 'desc');
+				$entries = Entry::orderBy('start', 'desc')->where('is_internal', false);
 			}
 
 			return $entries->take($this->property('limit'))->get()->reverse();
 		}
 
-    }
+	}
 }

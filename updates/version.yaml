@@ -30,3 +30,6 @@
     - 'New Timeline template'
 1.0.14:
     - 'New Timeline template 4'
+1.0.15:
+    - 'Internal events'
+    - update_entries_internal.php
