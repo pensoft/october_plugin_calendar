@@ -109,6 +109,9 @@ class Entry extends Model
 	}
 
 	public function getEventTimeAttribute(){
+		if($this->all_day){
+			return '';
+		}
 		$start = new Carbon($this->start);
 		$end = new Carbon($this->end);
 		if ($start->hour === $end->hour && $start->minute === $end->minute) {

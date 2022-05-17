@@ -33,3 +33,5 @@
 1.0.15:
     - 'Internal events'
     - update_entries_internal.php
+1.0.16:
+    - 'All day check when showing time'
