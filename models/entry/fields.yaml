@@ -69,7 +69,7 @@ fields:
         hidden: 0
         required: 1
         type: number
-        comment: '1- organized; 2- involved'
+        comment: '1- organized; 2- involved; 3-relevant;'
     cover_image:
         label: 'pensoft.content::lang.plugin.cover'
         mode: image
