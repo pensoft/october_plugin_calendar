@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\DB;
 use Model;
 use Cms\Classes\Theme;
 use RainLab\User\Facades\Auth;
-
+use BackendAuth;
 /**
  * Model
  */
@@ -13,6 +13,16 @@ class Entry extends Model
 {
 	use \October\Rain\Database\Traits\Validation;
 	use \October\Rain\Database\Traits\SoftDelete;
+    // For Revisionable namespace
+    use \October\Rain\Database\Traits\Revisionable;
+
+    public $timestamps = false;
+
+    // Add  for revisions limit
+    public $revisionableLimit = 200;
+
+    // Add for revisions on particular field
+    protected $revisionable = ["id","title", "start", "end", "url", "place", "slug"];
 
 	protected $dates = ['deleted_at'];
 
@@ -277,4 +287,17 @@ class Entry extends Model
 			->get();
 		// ->toArray();
 	}
+    // Add  below relationship with Revision model
+    public $morphMany = [
+        'revision_history' => ['System\Models\Revision', 'name' => 'revisionable']
+    ];
+
+    // Add below function use for get current user details
+    public function diff(){
+        $history = $this->revision_history;
+    }
+    public function getRevisionableUser()
+    {
+        return BackendAuth::getUser()->id;
+    }
 }
