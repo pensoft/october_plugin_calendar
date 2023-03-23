@@ -7,7 +7,7 @@
 
                 var calendar = new FullCalendar.Calendar(calendarEl, {
                     plugins: [ 'dayGrid', 'list', 'bootstrap' ],
-                    defaultView: 'listYear',
+                    defaultView: '{{ __SELF__.property("default_view")}}',
                     header: {
                         left:   'today,prev,next',
                         center: 'title',

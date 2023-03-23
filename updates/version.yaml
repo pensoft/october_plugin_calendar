@@ -41,3 +41,5 @@
     - 'Revision history'
 1.0.19:
     - 'ListYear view by default'
+1.0.20:
+    - 'default view property'
