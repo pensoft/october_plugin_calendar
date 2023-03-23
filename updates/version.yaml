@@ -39,3 +39,5 @@
     - 'Event identifiers 1-organised, 2-involved, 3-relevant'
 1.0.18:
     - 'Revision history'
+1.0.19:
+    - 'ListYear view by default'
