@@ -16,6 +16,16 @@ class Entry extends Model
 {
 	use \October\Rain\Database\Traits\Validation;
 	use \October\Rain\Database\Traits\SoftDelete;
+    // For Revisionable namespace
+    use \October\Rain\Database\Traits\Revisionable;
+
+    public $timestamps = false;
+
+    // Add  for revisions limit
+    public $revisionableLimit = 200;
+
+    // Add for revisions on particular field
+    protected $revisionable = ["id","title", "start", "end", "url", "place", "slug"];
 
 	protected $dates = ['deleted_at'];
 
@@ -296,6 +306,7 @@ class Entry extends Model
         return BackendAuth::getUser()->id;
     }
 
+
 	        /**
      * Add translation support to this model, if available.
      *
@@ -328,5 +339,4 @@ class Entry extends Model
             }
         );
     }
-
 }
