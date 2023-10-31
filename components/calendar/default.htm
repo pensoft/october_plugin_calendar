@@ -7,6 +7,7 @@
 
                 var calendar = new FullCalendar.Calendar(calendarEl, {
                     plugins: [ 'dayGrid', 'list', 'bootstrap' ],
+                    defaultView: '{{ __SELF__.property("default_view")}}',
                     header: {
                         left:   'today,prev,next',
                         center: 'title',
@@ -16,7 +17,7 @@
                     events: {
                         url: document.location.origin + '/api/pensoft/calendar/feed/{{ __SELF__.property("limit") }}/{{ __SELF__.property("category") }}',
                         method: 'GET',
-                        
+
                         rendering: 'inverse-background',
                         failure: function() {
                             alert('there was an error while fetching events!');
