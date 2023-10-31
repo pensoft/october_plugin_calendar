@@ -17,3 +17,9 @@ columns:
         type: date
         invisible: false
         sortable: true
+    revisions:
+        type: partial
+        path: ~/plugins/pensoft/calendar/partials/_revision.htm
+        searchable: false
+        sortable: false
+        valueFrom: id
