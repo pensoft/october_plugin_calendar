@@ -33,6 +33,10 @@ class Entry extends Model
 		'cover_image' => 'System\Models\File',
 	];
 
+    public $attachMany = [
+        'gallery' => 'System\Models\File'
+    ];
+
 	public $belongsToMany = [
 		'speakers' => 'System\Models\File',
 	];
@@ -63,6 +67,19 @@ class Entry extends Model
 		'resource_editable'     => 'boolean'
 	];
 
+    /**
+     * Actions to perform before deleting an article.
+     * It checks if the Galleries model exists in the Media plugin.
+     * If so, it dissociates the galleries linked to this article.
+     */
+    public function beforeDelete()
+    {
+        if (class_exists('\Pensoft\Media\Models\Galleries')) {
+            \Pensoft\Media\Models\Galleries::where('event_id', $this->id)
+                ->update(['event_id' => null, 'event_related' => false]);
+        }
+    }
+	
 	/**
 	 * Get the start value.
 	 *

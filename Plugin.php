@@ -19,6 +19,8 @@ class Plugin extends PluginBase
             'Pensoft\Calendar\Components\Calendar' => 'calendar',
             'Pensoft\Calendar\Components\PastEvents' => 'PastEvents',
             'Pensoft\Calendar\Components\Timeline' => 'Timeline',
+            'Pensoft\Calendar\Components\EventGallery' => 'event_galleries',
+
         ];
     }
 
