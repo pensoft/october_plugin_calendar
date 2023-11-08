@@ -8,7 +8,7 @@
             {{ form_open({request: __SELF__ ~ '::onDownload'}) }}
             <input type="hidden" name="gallery_id" value="{{ gallery.id }}">
             <button type="submit" href="#" class="btn btn-primary">{{'Download all images' |_}}</button>
-            {{ form_close() }}        
+            {{ form_close() }}
         </div>
         <div class="col-xs-12 col-md-10">
             <div class="news_content_wrapper">
@@ -21,11 +21,9 @@
 
                     <a class="prev" onclick="plusSlides(-1, {{ gallery.id }})"></a>
                     <a class="next" onclick="plusSlides(1, {{ gallery.id }})"></a>
-
                     <div class="caption-container">
                         <p id="caption_{{ gallery.id }}"></p>
                     </div>
-
                     <div class="row">
                         {% for key, image in gallery.images %}
                         <div class="col-md-2 col-xs-3 column">
@@ -74,12 +72,12 @@
         if (n > slides.length) { slideIndex[galleryId] = 1 }
         if (n < 1) { slideIndex[galleryId] = slides.length }
         for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";  
+            slides[i].style.display = "none";
         }
         for (i = 0; i < dots.length; i++) {
             dots[i].className = dots[i].className.replace(" active", "");
         }
-        slides[slideIndex[galleryId]-1].style.display = "block";  
+        slides[slideIndex[galleryId]-1].style.display = "block";
         dots[slideIndex[galleryId]-1].className += " active";
         captionText.html(dots[slideIndex[galleryId]-1].alt);
     }

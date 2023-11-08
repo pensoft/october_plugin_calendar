@@ -12,8 +12,8 @@ columns:
         type: number
         sortable: true
     revisions:
-    type: partial
-    path: ~/plugins/pensoft/media/partials/_revision.htm
-    searchable: false
-    sortable: false
-    valueFrom: id
+        type: partial
+        path: ~/plugins/pensoft/calendar/partials/_revision.htm
+        searchable: false
+        sortable: false
+        valueFrom: id

@@ -5,7 +5,10 @@ use Illuminate\Support\Facades\DB;
 use Model;
 use Cms\Classes\Theme;
 use RainLab\User\Facades\Auth;
+
 use BackendAuth;
+use Validator;
+
 /**
  * Model
  */
@@ -33,15 +36,19 @@ class Entry extends Model
 		'materials'
 	];
 	/* translate */
-	public $implement = ['RainLab.Translate.Behaviors.TranslatableModel'];
+	// public $implement = ['RainLab.Translate.Behaviors.TranslatableModel'];
 
-	public $translatable = ['title', 'description', 'place'];
+	public $translatable = ['title', 'description', 'place', 'slug'];
 
 	public $appends = ['event_date', 'event_time'];
 
 	public $attachOne = [
 		'cover_image' => 'System\Models\File',
 	];
+
+    public $attachMany = [
+        'gallery' => 'System\Models\File'
+    ];
 
 	public $belongsToMany = [
 		'speakers' => 'System\Models\File',
@@ -51,6 +58,7 @@ class Entry extends Model
 	 * @var array Validation rules
 	 */
 	public $rules = [ ];
+
 
 	/**
 	 * @var string The database table used by the model.
@@ -73,6 +81,19 @@ class Entry extends Model
 		'resource_editable'     => 'boolean'
 	];
 
+    /**
+     * Actions to perform before deleting an article.
+     * It checks if the Galleries model exists in the Media plugin.
+     * If so, it dissociates the galleries linked to this article.
+     */
+    public function beforeDelete()
+    {
+        if (class_exists('\Pensoft\Media\Models\Galleries')) {
+            \Pensoft\Media\Models\Galleries::where('event_id', $this->id)
+                ->update(['event_id' => null, 'event_related' => false]);
+        }
+    }
+	
 	/**
 	 * Get the start value.
 	 *
@@ -287,6 +308,7 @@ class Entry extends Model
 			->get();
 		// ->toArray();
 	}
+
     // Add  below relationship with Revision model
     public $morphMany = [
         'revision_history' => ['System\Models\Revision', 'name' => 'revisionable']
@@ -299,5 +321,39 @@ class Entry extends Model
     public function getRevisionableUser()
     {
         return BackendAuth::getUser()->id;
+    }
+
+
+	        /**
+     * Add translation support to this model, if available.
+     *
+     * @return void
+     */
+    public static function boot()
+    {
+        Validator::extend(
+            'json',
+            function ($attribute, $value, $parameters) {
+                json_decode($value);
+
+                return json_last_error() == JSON_ERROR_NONE;
+            }
+        );
+
+        // Call default functionality (required)
+        parent::boot();
+
+        // Check the translate plugin is installed
+        if (!class_exists('RainLab\Translate\Behaviors\TranslatableModel')) {
+            return;
+        }
+
+        // Extend the constructor of the model
+        self::extend(
+            function ($model) {
+                // Implement the translatable behavior
+                $model->implement[] = 'RainLab.Translate.Behaviors.TranslatableModel';
+            }
+        );
     }
 }

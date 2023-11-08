@@ -33,8 +33,6 @@ class Category extends Model
      */
     public $table = 'christophheich_calendar_categories';
 
-
-
     /* translate */
 	public $implement = ['RainLab.Translate.Behaviors.TranslatableModel'];
 
