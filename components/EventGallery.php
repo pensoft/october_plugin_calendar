@@ -164,15 +164,13 @@ class EventGallery extends ComponentBase
      */
     protected function loadGalleries()
     {
-        $eventId = $this->param('slug');
-        $event = Entry::where('slug', $eventId)->first();
+        $entrySlug = $this->param('slug');
+        $entry = Entry::where('slug', $entrySlug)->first();
 
-        if ($event && class_exists(\Pensoft\Media\Models\Galleries::class)) {
-            return \Pensoft\Media\Models\Galleries::where('event_related', true)
-                ->where('event_id', $event->id)
-                ->orderBy('created_at', 'desc')
-                ->get();
+        if ($entry) {
+            return $entry->galleries;
         }
+    
         return [];
     }
 }

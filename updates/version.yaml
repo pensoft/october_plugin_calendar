@@ -51,3 +51,8 @@
     - 'Galleries related to events added'
 1.0.24:
     - 'Galleries related to events added FIX'
+1.0.25:
+    - 'Created galleries-entry pivot table'
+    - create_table_galleries_entry_pivot.php
+1.0.26:
+    - 'Galleries logic updated many-to-many relation'

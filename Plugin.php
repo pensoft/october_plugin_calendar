@@ -13,6 +13,13 @@ use System\Models\Revision as Revision;
 
 class Plugin extends PluginBase
 {
+    public function pluginDetails()
+    {
+        return [
+            'require' => ['Pensoft.Media']
+        ];
+    }
+
     public function boot(){
         /* Extetions for revision */
         Revision::extend(function($model){
@@ -35,7 +42,6 @@ class Plugin extends PluginBase
             'Pensoft\Calendar\Components\PastEvents' => 'PastEvents',
             'Pensoft\Calendar\Components\Timeline' => 'Timeline',
             'Pensoft\Calendar\Components\EventGallery' => 'event_galleries',
-
         ];
     }
 
