@@ -8,7 +8,11 @@ class CreateTableGalleriesEntryPivot extends Migration
 {
     public function up()
     {
-        if (!Schema::hasTable('pensoft_media_galleries') || !Schema::hasTable('christophheich_calendar_entries')) {
+        // if (!Schema::hasTable('pensoft_media_galleries') || !Schema::hasTable('christophheich_calendar_entries')) {
+        //     return;
+        // }
+
+        if (Schema::hasTable('pensoft_gallery_entry_pivot')) {
             return;
         }
 
