@@ -13,10 +13,25 @@ use System\Models\Revision as Revision;
 
 class Plugin extends PluginBase
 {
+
+    public $require = ['RainLab.Translate', 'Pensoft.Media'];
+
     public function pluginDetails()
     {
         return [
-            'require' => ['Pensoft.Media']
+            'name'      => 'Events',
+            'icon'      => 'oc-icon-calendar-o',
+            'author'    => 'Pensoft'
+        ];
+    }
+
+    public function registerComponents()
+    {
+        return [
+            'Pensoft\Calendar\Components\Calendar' => 'calendar',
+            'Pensoft\Calendar\Components\PastEvents' => 'PastEvents',
+            'Pensoft\Calendar\Components\Timeline' => 'Timeline',
+            'Pensoft\Calendar\Components\EventGallery' => 'event_galleries',
         ];
     }
 
@@ -31,22 +46,5 @@ class Plugin extends PluginBase
                 return Diff::toHTML(Diff::compare($model->old_value, $model->new_value));
             });
         });
-    }
-    
-    public $require = ['RainLab.Translate'];
-
-    public function registerComponents()
-    {
-        return [
-            'Pensoft\Calendar\Components\Calendar' => 'calendar',
-            'Pensoft\Calendar\Components\PastEvents' => 'PastEvents',
-            'Pensoft\Calendar\Components\Timeline' => 'Timeline',
-            'Pensoft\Calendar\Components\EventGallery' => 'event_galleries',
-        ];
-    }
-
-    public function registerSettings()
-    {
-
     }
 }

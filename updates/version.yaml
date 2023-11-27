@@ -59,4 +59,6 @@
     - "Removed return when pensoft_media_galleries doesnt exist condition"
     - create_table_galleries_entry_pivot.php
 1.0.28:
-    - 'event component fix'
+    - 'Plugin name'
+1.0.29:
+    - 'Event component fix'
