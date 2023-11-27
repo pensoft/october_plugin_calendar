@@ -8,10 +8,14 @@
  */
 
 use System\Classes\PluginBase;
+use SaurabhDhariwal\Revisionhistory\Classes\Diff as Diff;
+use System\Models\Revision as Revision;
 
 class Plugin extends PluginBase
 {
 
+    public $require = ['RainLab.Translate', 'Pensoft.Media'];
+    
     public function pluginDetails()
     {
         return [
@@ -21,14 +25,13 @@ class Plugin extends PluginBase
         ];
     }
 
-    public $require = ['RainLab.Translate', 'Pensoft.Media'];
-
     public function registerComponents()
     {
         return [
             'Pensoft\Calendar\Components\Calendar' => 'calendar',
             'Pensoft\Calendar\Components\PastEvents' => 'PastEvents',
             'Pensoft\Calendar\Components\Timeline' => 'Timeline',
+            'Pensoft\Calendar\Components\EventGallery' => 'event_galleries',
         ];
     }
 

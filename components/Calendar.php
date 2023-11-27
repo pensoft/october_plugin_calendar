@@ -74,7 +74,13 @@ class Calendar extends ComponentBase
                 'description'   => '',
 				'type'          => 'checkbox',
 				'default'       => 'false'
-            ]
+            ],
+            'default_view' => [
+                'title'             => 'Default View',
+                'description'       => 'dayGridMonth,dayGridWeek,dayGridDay,listYear',
+                'default'           => 'dayGridMonth',
+                'type'              => 'string',
+            ],
         ];
     }
 

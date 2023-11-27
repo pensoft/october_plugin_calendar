@@ -58,5 +58,8 @@
 1.0.27:
     - "Removed return when pensoft_media_galleries doesnt exist condition"
     - create_table_galleries_entry_pivot.php
+<<<<<<< HEAD
 1.0.28:
     - 'Plugin name'
+=======
+>>>>>>> 05f900570605727c2b9a9f9895e90941cb5d5f3a
