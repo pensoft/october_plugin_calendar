@@ -11,7 +11,17 @@ use System\Classes\PluginBase;
 
 class Plugin extends PluginBase
 {
-    public $require = ['RainLab.Translate'];
+
+    public function pluginDetails()
+    {
+        return [
+            'name'      => 'Events',
+            'icon'      => 'oc-icon-calendar-o',
+            'author'    => 'Pensoft'
+        ];
+    }
+
+    public $require = ['RainLab.Translate', 'Pensoft.Media'];
 
     public function registerComponents()
     {
@@ -22,8 +32,16 @@ class Plugin extends PluginBase
         ];
     }
 
-    public function registerSettings()
-    {
+    public function boot(){
+        /* Extetions for revision */
+        Revision::extend(function($model){
+            /* Revison can access to the login user */
+            $model->belongsTo['user'] = ['Backend\Models\User'];
 
+            /* Revision can use diff function */
+            $model->addDynamicMethod('getDiff', function() use ($model){
+                return Diff::toHTML(Diff::compare($model->old_value, $model->new_value));
+            });
+        });
     }
 }

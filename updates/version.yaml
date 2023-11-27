@@ -37,3 +37,26 @@
     - 'All day check when showing time'
 1.0.17:
     - 'Event identifiers 1-organised, 2-involved, 3-relevant'
+1.0.18:
+    - 'Revision history'
+1.0.19:
+    - 'ListYear view by default'
+1.0.20:
+    - 'default view property'
+1.0.21:
+    - 'Translate'
+1.0.22:
+    - 'Revision partial fix'
+1.0.23:
+    - 'Galleries related to events added'
+1.0.24:
+    - 'Galleries related to events added FIX'
+1.0.25:
+    - 'Created galleries-entry pivot table'
+1.0.26:
+    - 'Galleries logic updated many-to-many relation'
+1.0.27:
+    - "Removed return when pensoft_media_galleries doesnt exist condition"
+    - create_table_galleries_entry_pivot.php
+1.0.28:
+    - 'Plugin name'
