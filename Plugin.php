@@ -15,7 +15,7 @@ class Plugin extends PluginBase
 {
 
     public $require = ['RainLab.Translate', 'Pensoft.Media'];
-    
+
     public function pluginDetails()
     {
         return [
