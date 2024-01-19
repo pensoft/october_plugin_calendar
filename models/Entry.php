@@ -231,7 +231,7 @@ class Entry extends Model
 			if(!is_null($data['background_color'])) {
 				$format['backgroundColor']  = $data['background_color'];
 			}else{
-                if ( $data['is_internal']) {
+                if ( $data['is_internal'] && !is_null($themeData->internal_events_color)) {
                     $format['backgroundColor']  = $themeData->internal_events_color;
                 }
             }
