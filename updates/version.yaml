@@ -62,3 +62,5 @@
     - 'Plugin name'
 1.0.29:
     - 'Event component fix'
+1.0.30:
+    - 'Internal events color'

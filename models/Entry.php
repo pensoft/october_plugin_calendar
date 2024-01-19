@@ -84,7 +84,7 @@ class Entry extends Model
 		'duration_editable'     => 'boolean',
 		'resource_editable'     => 'boolean'
 	];
-	
+
 	/**
 	 * Get the start value.
 	 *
@@ -150,6 +150,8 @@ class Entry extends Model
 	public static function formatted($count, $category)
 	{
 		$user = Auth::check();
+        $activeTheme = Theme::getActiveTheme();
+        $themeData = $activeTheme->getCustomData();
 		//dd($user = Entry::whereIn('identifier->id', array(1, 3))->get());
 		//dd(Entry::whereRaw('JSON_CONTAINS(identifier->"$.id", "1")')->get());
 		//dd($category);
@@ -191,8 +193,7 @@ class Entry extends Model
 			}
 
 		}
-
-		return array_map(function($data) {
+		return array_map(function($data) use($themeData) {
 			$format['id']               = $data['id'];
 			$format['title']            = $data['title'];
 			$format['slug']             = $data['slug'];
@@ -229,7 +230,11 @@ class Entry extends Model
 			$format['source']           = $data['source'];
 			if(!is_null($data['background_color'])) {
 				$format['backgroundColor']  = $data['background_color'];
-			}
+			}else{
+                if ( $data['is_internal']) {
+                    $format['backgroundColor']  = $themeData->internal_events_color;
+                }
+            }
 			if(!is_null($data['border_color'])) {
 				$format['borderColor'] = $data['border_color'];
 			}
