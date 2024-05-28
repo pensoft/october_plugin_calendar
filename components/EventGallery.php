@@ -36,29 +36,29 @@ class EventGallery extends ComponentBase
 
     /**
      * Handles the request for downloading a gallery as a ZIP archive.
-     * 
+     *
      * @return mixed The download response or error message.
      */
     public function onDownload()
     {
         $galleryId = post('gallery_id');
-    
+
         if (!$galleryId) {
             return "No gallery specified for download.";
         }
-    
+
         $zipFile = $this->createZipArchive($galleryId);
-    
+
         if (!$zipFile) {
             return "Error creating ZIP file.";
         }
-    
+
         return $this->prepareDownloadResponse($zipFile);
     }
 
     /**
      * Creates a ZIP archive from the images in the specified gallery.
-     * 
+     *
      * @param int $galleryId The ID of the gallery.
      * @return string|null The file path to the created ZIP file or null on failure.
      */
@@ -72,21 +72,21 @@ class EventGallery extends ComponentBase
         if (!$gallery) {
             return null;
         }
-    
+
         $zipFileName = $this->getTemporaryZipFileName($gallery->name);
         $zip = new \ZipArchive;
 
         if ($zip->open($zipFileName, \ZipArchive::CREATE | \ZipArchive::OVERWRITE) !== true) {
             return null;
         }
-    
+
         $images = $this->getImagePaths($gallery);
         if (empty($images)) {
             $zip->close();
             @unlink($zipFileName);
             return null;
         }
-    
+
         foreach ($images as $image) {
             if (file_exists($image)) {
                 $zip->addFile($image, basename($image));
@@ -94,13 +94,13 @@ class EventGallery extends ComponentBase
         }
 
         $zip->close();
-    
+
         return $zipFileName;
     }
 
     /**
      * Generates a temporary file name for the ZIP archive.
-     * 
+     *
      * @param string $galleryName The name of the gallery.
      * @return string The file path for the temporary ZIP file.
      */
@@ -112,7 +112,7 @@ class EventGallery extends ComponentBase
 
     /**
      * Prepares the HTTP response for downloading the ZIP file.
-     * 
+     *
      * @param string $zipFile The file path to the ZIP file.
      * @return mixed The download response or error message.
      */
@@ -126,14 +126,14 @@ class EventGallery extends ComponentBase
 
     /**
      * Retrieves the local paths for all images in the specified gallery.
-     * 
+     *
      * @param \Pensoft\Media\Models\Galleries $gallery The gallery model instance.
      * @return array An array of image file paths.
      */
     protected function getImagePaths($gallery)
     {
         $images = [];
-    
+
         if (isset($gallery->images)) {
             foreach ($gallery->images as $image) {
                 $localPath = $image->getLocalPath();
@@ -142,13 +142,13 @@ class EventGallery extends ComponentBase
                 }
             }
         }
-    
+
         return $images;
     }
 
     /**
      * Sanitizes a file name to ensure it's safe for the file system.
-     * 
+     *
      * @param string $filename The original file name.
      * @return string The sanitized file name.
      */
@@ -159,20 +159,18 @@ class EventGallery extends ComponentBase
 
     /**
      * Loads galleries related to the current article.
-     * 
+     *
      * @return array An array of Gallery models or an empty array if none are found.
      */
     protected function loadGalleries()
     {
-        $eventId = $this->param('slug');
-        $event = Entry::where('slug', $eventId)->first();
+        $entrySlug = $this->param('slug');
+        $entry = Entry::where('slug', $entrySlug)->first();
 
-        if ($event && class_exists(\Pensoft\Media\Models\Galleries::class)) {
-            return \Pensoft\Media\Models\Galleries::where('event_related', true)
-                ->where('event_id', $event->id)
-                ->orderBy('created_at', 'desc')
-                ->get();
+        if ($entry) {
+            return $entry->galleries;
         }
+    
         return [];
     }
 }
