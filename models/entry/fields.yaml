@@ -258,3 +258,8 @@ fields:
       span: right
       default: false
       commentAbove: 'If checked, only logged in users will be able to see the event'
+    meta_keywords:
+        label: 'Meta Keywords'
+        type: 'textarea'
+        size: 'medium'
+        tab: 'SEO'
