@@ -69,3 +69,6 @@
 1.0.32:
     - 'Added meta keywords column'
     - update_entries3.php
+1.0.33:
+    - 'Added meta description and title field'
+    - update_entries4.php
