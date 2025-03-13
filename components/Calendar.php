@@ -189,18 +189,6 @@ class Calendar extends ComponentBase
             $sortType = $sortType;
             $result->where('identifier', "{$sortType}");
         }
-
-
-//        $query = $result->orderBy('start', 'DESC');
-//        $sql = $query->toSql();
-//        $bindings = $query->getBindings();
-//
-//        $sql_with_bindings = preg_replace_callback('/\?/', function ($match) use ($sql, &$bindings) {
-//            return json_encode(array_shift($bindings));
-//        }, $sql);
-//
-//        dd($sql_with_bindings);
-//        return $result->orderBy('start', 'DESC')->get();
         return $result->orderBy('start', 'DESC')->get();
     }
 }
