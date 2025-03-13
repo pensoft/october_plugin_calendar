@@ -25,6 +25,6 @@ navigation:
                 url: pensoft/calendar/entries
                 icon: icon-bars
             side-menu-item:
-                label: Types
-                url: /pensoft/calendarcardsextension/eventtypes
+                label: Categories
+                url: pensoft/calendar/categories
                 icon: icon-tag

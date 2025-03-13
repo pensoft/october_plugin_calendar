@@ -1,14 +1,4 @@
 fields:
-    identifier:
-        label: 'pensoft.calendar::lang.category.identifier'
-        span: auto
-        required: 1
-        type: number
-        comment: 'pensoft.calendar::lang.category.identifierComment'
-    sectionCategory:
-        label: 'pensoft.calendar::lang.category.sectionCategory'
-        span: full
-        type: section
     title:
         label: 'pensoft.calendar::lang.category.title'
         span: auto

@@ -56,6 +56,13 @@ class Entry extends Model
             'otherKey' => 'gallery_id',
             'order' => 'created_at desc'
         ],
+
+        'categories' => [
+            'Pensoft\Calendar\Models\Category',
+            'table' => 'pensoft_calendar_entries_categories',
+            'key' => 'entry_id',
+            'otherKey' => 'category_id',
+        ]
 	];
 
 	/**
@@ -304,6 +311,13 @@ class Entry extends Model
 			->get();
 		// ->toArray();
 	}
+
+    public function scopeByCategory($query, $categoryId)
+    {
+        return $query->whereHas('categories', function ($query) use ($categoryId) {
+            $query->where('christophheich_calendar_categories.id', $categoryId);
+        });
+    }
 
     // Add  below relationship with Revision model
     public $morphMany = [

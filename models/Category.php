@@ -42,6 +42,16 @@ class Category extends Model
         'revision_history' => ['System\Models\Revision', 'name' => 'revisionable']
     ];
 
+    public $belongsToMany = [
+        'entry' => [
+            'Pensoft\Calendar\Models\Entry',
+            'table' => 'pensoft_calendar_entries_categories',
+            'key' => 'category_id',
+            'otherKey' => 'entry_id',
+            'order' => 'sort_order'
+        ],
+    ];
+
     // Add below function use for get current user details
     public function diff(){
         $history = $this->revision_history;

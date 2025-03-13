@@ -44,7 +44,7 @@
 1.0.20:
     - 'default view property'
 1.0.21:
-    - 'Translate'
+    - Translate
 1.0.22:
     - 'Revision partial fix'
 1.0.23:
@@ -56,7 +56,7 @@
 1.0.26:
     - 'Galleries logic updated many-to-many relation'
 1.0.27:
-    - "Removed return when pensoft_media_galleries doesnt exist condition"
+    - 'Removed return when pensoft_media_galleries doesnt exist condition'
     - create_table_galleries_entry_pivot.php
 1.0.28:
     - 'Plugin name'
@@ -72,3 +72,9 @@
 1.0.33:
     - 'Added meta description and title field'
     - update_entries4.php
+1.0.34:
+    - 'Created table pensoft_calendar_entries_categories'
+    - builder_table_create_pensoft_calendar_entries_categories.php
+1.0.35:
+    - 'Updated table pensoft_calendar_entries_categories'
+    - builder_table_update_pensoft_calendar_entries_categories.php

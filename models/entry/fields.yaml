@@ -258,6 +258,16 @@ fields:
       span: right
       default: false
       commentAbove: 'If checked, only logged in users will be able to see the event'
+    categories:
+        label: Categories
+        comment: Attach to a category
+        type: relation
+        span: auto
+        select: title
+        nameFrom: title
+        descriptionFrom: description
+        pivotData:
+            table: pensoft_calendar_entries_categories
     meta_title:
         label: 'Meta Title'
         type: text

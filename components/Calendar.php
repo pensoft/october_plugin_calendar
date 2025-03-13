@@ -6,7 +6,10 @@
  * Time: 17:36
  */
 
+use Carbon\Carbon;
 use Cms\Classes\ComponentBase;
+use Pensoft\Articles\Models\Article;
+use Pensoft\Calendar\Models\Entry;
 
 class Calendar extends ComponentBase
 {
@@ -160,5 +163,44 @@ class Calendar extends ComponentBase
             'zh-cn'     => 'zh-cn',
             'zh-tw'     => 'zh-tw'
         ];
+    }
+
+
+    public function onSearchRecords() {
+        $sortTarget = post('sortTarget');
+        $sortType = post('sortType');
+        $this->page['records'] = $this->searchRecords($sortTarget, $sortType);
+        $this->page['past_entries'] = Entry::where('end', '<', Carbon::now())->orderBy('start', 'desc')->get();
+
+        return ['#recordsContainer' => $this->renderPartial('eventslist')];
+    }
+
+    protected function searchRecords(
+        $sortTarget = 0,
+        $sortType = 0
+    ) {
+
+        $result = Entry::where('end', '>', Carbon::now())->where('is_internal', false);
+
+        if($sortTarget){
+            $result->byCategory($sortTarget);
+        }
+        if($sortType){
+            $sortType = $sortType;
+            $result->where('identifier', "{$sortType}");
+        }
+
+
+//        $query = $result->orderBy('start', 'DESC');
+//        $sql = $query->toSql();
+//        $bindings = $query->getBindings();
+//
+//        $sql_with_bindings = preg_replace_callback('/\?/', function ($match) use ($sql, &$bindings) {
+//            return json_encode(array_shift($bindings));
+//        }, $sql);
+//
+//        dd($sql_with_bindings);
+//        return $result->orderBy('start', 'DESC')->get();
+        return $result->orderBy('start', 'DESC')->get();
     }
 }
