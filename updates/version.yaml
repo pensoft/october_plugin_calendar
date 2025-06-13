@@ -78,3 +78,5 @@
 1.0.35:
     - 'Updated table pensoft_calendar_entries_categories'
     - builder_table_update_pensoft_calendar_entries_categories.php
+1.0.36:
+    - 'Permissions'

@@ -24,7 +24,3 @@ navigation:
                 label: 'pensoft.calendar::lang.calendar.entries'
                 url: pensoft/calendar/entries
                 icon: icon-bars
-            side-menu-item:
-                label: Categories
-                url: pensoft/calendar/categories
-                icon: icon-tag
