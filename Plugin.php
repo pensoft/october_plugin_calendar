@@ -48,29 +48,5 @@ class Plugin extends PluginBase
         });
     }
 
-    public function registerPermissions()
-    {
-        return [
-            'pensoft.calendar.access' => [
-                'tab' => 'Events',
-                'label' => 'Manage events'
-            ],
-        ];
-    }
-
-    public function registerNavigation()
-    {
-        return [
-            'events' => [
-                'label'       => 'Events',
-                'url'         => \Backend::url('pensoft/calendar/entries'),
-                'icon'        => 'icon-calendar',
-                'permissions' => ['pensoft.calendar.*'],
-
-            ],
-        ];
-    }
-
-
 }
 
