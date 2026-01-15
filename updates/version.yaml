@@ -84,3 +84,5 @@
     - 'Permissions fix'
 1.0.38:
     - 'Categories menu item'
+1.0.39:
+    - 'Strp tags from description to fix the caledar display'

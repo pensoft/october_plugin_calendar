@@ -215,7 +215,7 @@ class Entry extends Model
 			$format['color']            = $data['color'];
 			$format['textColor']        = $data['text_color'];
 			$format['rendering']        = $data['rendering'];
-			$format['description']      = $data['description'];
+			$format['description']      = strip_tags($data['description']);
 			if(!empty($data['url'])) {
 				$format['url']          = $data['url'];
 			}
