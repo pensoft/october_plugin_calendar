@@ -88,3 +88,5 @@
     - 'Strp tags from description to fix the caledar display'
 1.0.40:
     - 'Add calendar store'
+1.0.41:
+    - 'Searchable backend columns'
