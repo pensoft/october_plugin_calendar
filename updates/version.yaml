@@ -90,3 +90,5 @@
     - 'Add calendar store'
 1.0.41:
     - 'Searchable backend columns'
+1.0.42:
+    - 'Default OFF show on timeline'
