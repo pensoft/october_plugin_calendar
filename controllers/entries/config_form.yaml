@@ -1,0 +1,11 @@
+name: Entries
+modelClass: Pensoft\Calendar\Models\Entry
+form: $/pensoft/calendar/models/entry/fields.yaml
+defaultRedirect: pensoft/calendar/entries
+create:
+    redirect: 'pensoft/calendar/entries/update/:id'
+    redirectClose: pensoft/calendar/entries
+update:
+    redirect: pensoft/calendar/entries
+    redirectClose: pensoft/calendar/entries
+preview: {  }

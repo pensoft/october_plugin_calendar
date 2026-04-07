@@ -1,0 +1,26 @@
+fields:
+    identifier:
+        label: 'pensoft.calendar::lang.event.identifier'
+        span: auto
+        type: number
+        comment: 'pensoft.calendar::lang.event.identifierComment'
+    sectionEvent:
+        label: 'pensoft.calendar::lang.event.sectionEvent'
+        span: full
+        type: section
+    title:
+        label: 'pensoft.calendar::lang.event.title'
+        span: auto
+        required: 1
+        type: text
+        comment: 'pensoft.calendar::lang.event.titleComment'
+    description:
+        label: 'pensoft.calendar::lang.event.description'
+        span: auto
+        type: text
+        comment: 'pensoft.calendar::lang.event.descriptionComment'
+    color:
+        label: 'pensoft.calendar::lang.event.color'
+        span: auto
+        type: colorpicker
+        commentAbove: 'pensoft.calendar::lang.event.colorComment'

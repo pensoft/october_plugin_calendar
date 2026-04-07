@@ -1,0 +1,21 @@
+columns:
+    title:
+        label: 'pensoft.calendar::lang.entry.title'
+        type: text
+        sortable: true
+        searchable: true
+    description:
+        label: 'pensoft.calendar::lang.entry.description'
+        type: partial
+        sortable: true
+        searchable: true
+        path: ~/plugins/pensoft/calendar/models/entry/_description_column.htm
+    start:
+        label: 'pensoft.calendar::lang.entry.start'
+        type: date
+        sortable: true
+    end:
+        label: 'pensoft.calendar::lang.entry.end'
+        type: date
+        invisible: false
+        sortable: true

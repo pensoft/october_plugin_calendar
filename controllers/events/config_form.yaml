@@ -1,0 +1,10 @@
+name: Events
+form: $/pensoft/calendar/models/event/fields.yaml
+modelClass: Pensoft\Calendar\Models\Event
+defaultRedirect: pensoft/calendar/events
+create:
+    redirect: 'pensoft/calendar/events/update/:id'
+    redirectClose: pensoft/calendar/events
+update:
+    redirect: pensoft/calendar/events
+    redirectClose: pensoft/calendar/events

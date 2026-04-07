@@ -1,0 +1,17 @@
+columns:
+    title:
+        label: 'pensoft.calendar::lang.event.title'
+        type: text
+        sortable: true
+    description:
+        label: 'pensoft.calendar::lang.event.description'
+        type: text
+        sortable: true
+    color:
+        label: 'pensoft.calendar::lang.event.color'
+        type: text
+        sortable: true
+    identifier:
+        label: 'pensoft.calendar::lang.event.identifier'
+        type: text
+        sortable: true

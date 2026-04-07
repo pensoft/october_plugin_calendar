@@ -1,0 +1,97 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table christophheich_calendar_entries'
+    - builder_table_create_christophheich_calendar_entries.php
+1.0.3:
+    - 'Created table christophheich_calendar_events'
+    - builder_table_create_christophheich_calendar_events.php
+1.0.4:
+    - 'Created table christophheich_calendar_categories'
+    - builder_table_create_christophheich_calendar_categories.php
+1.0.5:
+    - 'Show only upcoming events property'
+1.0.6:
+    - 'small changes'
+1.0.7:
+    - 'new parameters'
+1.0.8:
+    - 'calendar tolltip text replace some asccii codes'
+1.0.9:
+    - 'calendar attr title/tooltip add event title'
+1.0.10:
+    - 'Timeline property and new db table field'
+    - update_entries2.php
+1.0.11:
+    - 'New Timeline template'
+1.0.12:
+    - 'New calendar property'
+1.0.13:
+    - 'New Timeline template'
+1.0.14:
+    - 'New Timeline template 4'
+1.0.15:
+    - 'Internal events'
+    - update_entries_internal.php
+1.0.16:
+    - 'All day check when showing time'
+1.0.17:
+    - 'Event identifiers 1-organised, 2-involved, 3-relevant'
+1.0.18:
+    - 'Revision history'
+1.0.19:
+    - 'ListYear view by default'
+1.0.20:
+    - 'default view property'
+1.0.21:
+    - Translate
+1.0.22:
+    - 'Revision partial fix'
+1.0.23:
+    - 'Galleries related to events added'
+1.0.24:
+    - 'Galleries related to events added FIX'
+1.0.25:
+    - 'Created galleries-entry pivot table'
+1.0.26:
+    - 'Galleries logic updated many-to-many relation'
+1.0.27:
+    - 'Removed return when pensoft_media_galleries doesnt exist condition'
+    - create_table_galleries_entry_pivot.php
+1.0.28:
+    - 'Plugin name'
+1.0.29:
+    - 'Event component fix'
+1.0.30:
+    - 'Internal events color'
+1.0.31:
+    - 'Internal events color fix'
+1.0.32:
+    - 'Added meta keywords column'
+    - update_entries3.php
+1.0.33:
+    - 'Added meta description and title field'
+    - update_entries4.php
+1.0.34:
+    - 'Created table pensoft_calendar_entries_categories'
+    - builder_table_create_pensoft_calendar_entries_categories.php
+1.0.35:
+    - 'Updated table pensoft_calendar_entries_categories'
+    - builder_table_update_pensoft_calendar_entries_categories.php
+1.0.36:
+    - 'Permissions'
+1.0.37:
+    - 'Permissions fix'
+1.0.38:
+    - 'Categories menu item'
+1.0.39:
+    - 'Strp tags from description to fix the caledar display'
+1.0.40:
+    - 'Add calendar store'
+1.0.41:
+    - 'Searchable backend columns'
+1.0.42:
+    - 'Default OFF show on timeline'
+
+4.0.1:
+    - 'Migrated to OctoberCMS 4 and PHP 8.2'

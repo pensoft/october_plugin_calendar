@@ -1,0 +1,13 @@
+columns:
+    title:
+        label: 'pensoft.calendar::lang.category.title'
+        type: text
+        sortable: true
+    description:
+        label: 'pensoft.calendar::lang.category.description'
+        type: text
+        sortable: true
+    identifier:
+        label: 'pensoft.calendar::lang.category.identifier'
+        type: number
+        sortable: true
