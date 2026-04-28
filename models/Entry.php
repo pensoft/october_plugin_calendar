@@ -4,7 +4,7 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Model;
 use Cms\Classes\Theme;
-use Illuminate\Support\Facades\Auth;
+use RainLab\User\Facades\Auth;
 
 use BackendAuth;
 use Validator;
